@@ -16,11 +16,13 @@ function PokemonPage() {
 
   const handleSearch = (e) => setSearchInput(e.target.value)
 
+  const handleNewPokemon = newPokemon => setPokemonList([...pokemonList, newPokemon])
+
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm handleNewPokemon={handleNewPokemon}/>
       <br />
       <Search searchInput={searchInput} handleSearch={handleSearch}/>
       <br />
